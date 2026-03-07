@@ -1,129 +1,780 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Timber Hub Enterprise</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TIMBER HUB ENTERPRISE | Wooden Doors, Digital Locks, Flooring & Timber</title>
+  <meta name="description" content="Timber Hub Enterprise in Bandar Hotspring, Tawau. Supplier of wooden doors, digital door locks, flooring, wooden tables and timber materials." />
+  <style>
+    :root{
+      --primary:#2f241d;
+      --secondary:#6f4e37;
+      --accent:#c89b6d;
+      --light:#f7f3ee;
+      --white:#ffffff;
+      --text:#2b2b2b;
+      --muted:#6e6e6e;
+      --line:#e8e0d7;
+      --shadow:0 12px 35px rgba(0,0,0,.08);
+      --radius:22px;
+      --max:1200px;
+    }
 
-body{
-font-family:Arial;
-margin:0;
-background:#f5f5f5;
-}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:var(--light);
+      line-height:1.6;
+    }
 
-header{
-background:#1e1e1e;
-color:white;
-padding:20px;
-text-align:center;
-}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
 
-.hero{
-background:url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85");
-background-size:cover;
-height:400px;
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
-font-size:40px;
-font-weight:bold;
-}
+    .container{
+      width:min(92%, var(--max));
+      margin:auto;
+    }
 
-.section{
-padding:50px;
-text-align:center;
-}
+    .topbar{
+      background:var(--primary);
+      color:#f3e9de;
+      font-size:14px;
+    }
 
-.products{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:30px;
-}
+    .topbar .container{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      padding:10px 0;
+      flex-wrap:wrap;
+    }
 
-.card{
-background:white;
-padding:20px;
-width:250px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(255,255,255,.93);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid var(--line);
+    }
 
-footer{
-background:#111;
-color:white;
-padding:30px;
-text-align:center;
-}
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      padding:16px 0;
+    }
 
-.button{
-background:#25D366;
-padding:15px 25px;
-color:white;
-text-decoration:none;
-border-radius:5px;
-}
+    .logo{
+      font-weight:800;
+      font-size:24px;
+      letter-spacing:1px;
+      color:var(--primary);
+    }
 
-</style>
+    .logo span{
+      display:block;
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:3px;
+      color:var(--secondary);
+      margin-top:2px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:24px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .nav-links a{
+      font-size:15px;
+      color:#3f3f3f;
+      font-weight:600;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 22px;
+      border-radius:999px;
+      font-weight:700;
+      transition:.2s ease;
+    }
+
+    .btn-primary{
+      background:var(--primary);
+      color:#fff;
+      box-shadow:var(--shadow);
+    }
+
+    .btn-primary:hover{transform:translateY(-2px)}
+    .btn-outline{
+      border:1px solid var(--primary);
+      color:var(--primary);
+      background:#fff;
+    }
+
+    .hero{
+      position:relative;
+      min-height:86vh;
+      display:flex;
+      align-items:center;
+      color:#fff;
+      background:
+        linear-gradient(rgba(25,18,13,.58), rgba(25,18,13,.58)),
+        url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    }
+
+    .hero-content{
+      width:min(92%, var(--max));
+      margin:auto;
+      padding:80px 0;
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:32px;
+      align-items:center;
+    }
+
+    .hero h1{
+      margin:0 0 16px;
+      font-size:clamp(36px, 5vw, 68px);
+      line-height:1.05;
+      font-weight:900;
+      max-width:720px;
+    }
+
+    .hero p{
+      max-width:620px;
+      font-size:18px;
+      color:#f2e9df;
+      margin:0 0 28px;
+    }
+
+    .hero-badges{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:22px;
+    }
+
+    .badge{
+      background:rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.2);
+      border-radius:999px;
+      padding:10px 14px;
+      font-size:13px;
+      backdrop-filter:blur(4px);
+    }
+
+    .hero-card{
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:24px;
+      padding:24px;
+      backdrop-filter:blur(6px);
+      box-shadow:var(--shadow);
+    }
+
+    .hero-card h3{
+      margin-top:0;
+      font-size:22px;
+    }
+
+    .hero-card ul{
+      margin:0;
+      padding-left:18px;
+      color:#f4ede5;
+    }
+
+    section{
+      padding:80px 0;
+    }
+
+    .section-head{
+      text-align:center;
+      max-width:760px;
+      margin:0 auto 40px;
+    }
+
+    .eyebrow{
+      color:var(--secondary);
+      font-weight:800;
+      letter-spacing:2px;
+      font-size:12px;
+      text-transform:uppercase;
+      margin-bottom:10px;
+    }
+
+    .section-head h2{
+      margin:0 0 12px;
+      font-size:clamp(28px,3vw,42px);
+      color:var(--primary);
+    }
+
+    .section-head p{
+      margin:0;
+      color:var(--muted);
+      font-size:16px;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px;
+      align-items:center;
+    }
+
+    .card{
+      background:#fff;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      border:1px solid #f0e8de;
+    }
+
+    .about-card{
+      padding:34px;
+    }
+
+    .about-card h3{
+      margin-top:0;
+      color:var(--primary);
+      font-size:28px;
+    }
+
+    .about-list{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-top:22px;
+    }
+
+    .mini-box{
+      background:#f9f5ef;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+      font-weight:700;
+      color:#4a372b;
+    }
+
+    .products-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:24px;
+    }
+
+    .product-card img{
+      height:220px;
+      width:100%;
+      object-fit:cover;
+    }
+
+    .product-card .content{
+      padding:22px;
+    }
+
+    .product-card h3{
+      margin:0 0 8px;
+      color:var(--primary);
+      font-size:22px;
+    }
+
+    .product-card p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .why-grid{
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:20px;
+    }
+
+    .why-item{
+      background:#fff;
+      border-radius:22px;
+      padding:24px;
+      box-shadow:var(--shadow);
+      border:1px solid #f0e8de;
+    }
+
+    .why-item .icon{
+      width:52px;
+      height:52px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      background:#f7efe5;
+      color:var(--secondary);
+      font-size:24px;
+      margin-bottom:16px;
+    }
+
+    .why-item h4{
+      margin:0 0 8px;
+      color:var(--primary);
+      font-size:20px;
+    }
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr;
+      gap:18px;
+    }
+
+    .gallery-grid img{
+      height:100%;
+      min-height:260px;
+      object-fit:cover;
+      border-radius:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .cta{
+      background:linear-gradient(135deg, #2f241d 0%, #4d382b 100%);
+      color:#fff;
+      border-radius:30px;
+      padding:48px;
+      box-shadow:var(--shadow);
+    }
+
+    .cta-wrap{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:28px;
+      align-items:center;
+    }
+
+    .cta h2{
+      margin:0 0 12px;
+      font-size:40px;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+      margin-top:28px;
+    }
+
+    .contact-box{
+      background:#fff;
+      border-radius:22px;
+      padding:24px;
+      box-shadow:var(--shadow);
+      border:1px solid #f0e8de;
+    }
+
+    .contact-box h4{
+      margin:0 0 8px;
+      color:var(--primary);
+      font-size:18px;
+    }
+
+    .contact-box p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .map-wrap{
+      margin-top:30px;
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .map-wrap iframe{
+      width:100%;
+      height:420px;
+      border:0;
+    }
+
+    footer{
+      background:#201712;
+      color:#d7c7b8;
+      padding:28px 0;
+      margin-top:60px;
+    }
+
+    .footer-wrap{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .whatsapp-float{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      background:#25D366;
+      color:#fff;
+      padding:14px 18px;
+      border-radius:999px;
+      font-weight:800;
+      box-shadow:0 12px 24px rgba(37,211,102,.35);
+      z-index:999;
+    }
+
+    @media (max-width: 1024px){
+      .hero-content,
+      .grid-2,
+      .cta-wrap{
+        grid-template-columns:1fr;
+      }
+
+      .products-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .why-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .gallery-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 720px){
+      .nav{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .nav-links{
+        gap:14px;
+      }
+
+      .products-grid,
+      .why-grid,
+      .gallery-grid,
+      .about-list{
+        grid-template-columns:1fr;
+      }
+
+      .hero{
+        min-height:auto;
+      }
+
+      .hero-content{
+        padding:56px 0;
+      }
+
+      .hero h1{
+        font-size:38px;
+      }
+
+      .hero p{
+        font-size:16px;
+      }
+
+      .cta{
+        padding:32px 24px;
+      }
+
+      .cta h2{
+        font-size:30px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<header>
-<h1>TIMBER HUB ENTERPRISE</h1>
-<p>Wooden Doors • Digital Locks • Flooring • Timber</p>
-</header>
+  <div class="topbar">
+    <div class="container">
+      <div>Bandar Hotspring, Tawau</div>
+      <div>Call / WhatsApp: 014-3794988</div>
+    </div>
+  </div>
 
-<div class="hero">
-TIMBER HUB
-</div>
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        TIMBER HUB
+        <span>ENTERPRISE</span>
+      </div>
 
-<div class="section">
-<h2>Our Products</h2>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#why-us">Why Us</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-<div class="products">
+      <a class="btn btn-primary" href="https://wa.me/60143794988" target="_blank">WhatsApp Us</a>
+    </div>
+  </header>
 
-<div class="card">
-<h3>Wooden Doors</h3>
-<p>High quality wooden doors for homes and offices.</p>
-</div>
+  <section class="hero">
+    <div class="hero-content">
+      <div>
+        <div class="hero-badges">
+          <div class="badge">Wooden Doors</div>
+          <div class="badge">Digital Locks</div>
+          <div class="badge">Flooring</div>
+          <div class="badge">Timber Materials</div>
+        </div>
+        <h1>Premium Timber & Building Material Supplier in Tawau</h1>
+        <p>
+          TIMBER HUB ENTERPRISE specializes in wooden doors, digital door locks, flooring,
+          wooden tables and timber materials for homes, offices, shops and renovation projects.
+        </p>
+        <a class="btn btn-primary" href="#products">Explore Products</a>
+        <a class="btn btn-outline" href="#contact" style="margin-left:10px;">Contact Now</a>
+      </div>
 
-<div class="card">
-<h3>Digital Door Locks</h3>
-<p>Smart and secure digital locks.</p>
-</div>
+      <div class="hero-card">
+        <h3>What We Supply</h3>
+        <ul>
+          <li>Modern wooden doors for home and commercial use</li>
+          <li>Smart digital locks with premium look</li>
+          <li>Stylish flooring for interior upgrade</li>
+          <li>Wooden tables and selected timber materials</li>
+          <li>One-stop local supplier in Tawau</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-<div class="card">
-<h3>Flooring</h3>
-<p>Premium wooden flooring solutions.</p>
-</div>
+  <section id="about">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">About Us</div>
+        <h2>Building Spaces With Warmth, Style & Practical Value</h2>
+        <p>
+          Timber Hub Enterprise is a local supplier based in Bandar Hotspring, Tawau.
+          We focus on timber-related products and interior building materials that help customers
+          create more attractive, comfortable and functional spaces.
+        </p>
+      </div>
 
-<div class="card">
-<h3>Wooden Tables</h3>
-<p>Solid wood furniture for modern homes.</p>
-</div>
+      <div class="grid-2">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=80" alt="Timber interior showroom">
+        </div>
 
-</div>
+        <div class="card about-card">
+          <h3>Local Brand, Better Support</h3>
+          <p>
+            Whether you are renovating a home, upgrading a shopfront, fitting out a homestay,
+            or sourcing timber-related materials for a project, we aim to provide practical and
+            presentable product solutions.
+          </p>
+          <p>
+            Our business is built around product quality, visual appeal, easy communication and
+            local customer support.
+          </p>
 
-</div>
+          <div class="about-list">
+            <div class="mini-box">Wooden Doors</div>
+            <div class="mini-box">Digital Locks</div>
+            <div class="mini-box">Flooring</div>
+            <div class="mini-box">Wooden Tables</div>
+            <div class="mini-box">Timber Materials</div>
+            <div class="mini-box">Tawau Local Service</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class="section">
-<h2>Contact Us</h2>
-<p>Address: Bandar Hotspring, Tawau</p>
-<p>Phone: 014-3794988</p>
+  <section id="products">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Our Products</div>
+        <h2>Product Categories</h2>
+        <p>
+          This section can later be upgraded with your actual product photos, model numbers,
+          pricing range and project references.
+        </p>
+      </div>
 
-<br>
+      <div class="products-grid">
+        <div class="card product-card">
+          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Wooden doors">
+          <div class="content">
+            <h3>Wooden Doors</h3>
+            <p>Modern, classic and practical wooden door options for homes, offices and commercial spaces.</p>
+          </div>
+        </div>
 
-<a class="button" href="https://wa.me/60143794988">
-WhatsApp Us
-</a>
+        <div class="card product-card">
+          <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80" alt="Digital door lock">
+          <div class="content">
+            <h3>Digital Door Locks</h3>
+            <p>Smart locking solutions that combine security, convenience and premium appearance.</p>
+          </div>
+        </div>
 
-</div>
+        <div class="card product-card">
+          <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80" alt="Flooring">
+          <div class="content">
+            <h3>Flooring</h3>
+            <p>Warm and elegant flooring choices to improve the look and feel of any interior space.</p>
+          </div>
+        </div>
 
-<footer>
-© Timber Hub Enterprise
-</footer>
+        <div class="card product-card">
+          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Wooden table">
+          <div class="content">
+            <h3>Wooden Tables</h3>
+            <p>Selected wooden tables and furniture pieces for residential and commercial environments.</p>
+          </div>
+        </div>
+
+        <div class="card product-card">
+          <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1200&q=80" alt="Timber materials">
+          <div class="content">
+            <h3>Timber Materials</h3>
+            <p>Timber supply for renovation, furniture making and related construction requirements.</p>
+          </div>
+        </div>
+
+        <div class="card product-card">
+          <img src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=1200&q=80" alt="Interior materials">
+          <div class="content">
+            <h3>Interior Material Supply</h3>
+            <p>Suitable for homeowners, contractors, shop owners and those looking to upgrade interiors.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why-us">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Why Choose Us</div>
+        <h2>Why Customers Consider Timber Hub</h2>
+        <p>
+          A good product is not enough. Customers also want style, trust, local support and easy communication.
+        </p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="icon">✓</div>
+          <h4>Local Support</h4>
+          <p>Based in Tawau, easier for customers to contact, visit and discuss their needs.</p>
+        </div>
+
+        <div class="why-item">
+          <div class="icon">◆</div>
+          <h4>Better Presentation</h4>
+          <p>Products that help create a more premium and modern look for homes and businesses.</p>
+        </div>
+
+        <div class="why-item">
+          <div class="icon">▣</div>
+          <h4>Multiple Categories</h4>
+          <p>Doors, locks, flooring, wooden tables and timber materials in one place.</p>
+        </div>
+
+        <div class="why-item">
+          <div class="icon">★</div>
+          <h4>Suitable For Projects</h4>
+          <p>Useful for renovation, homestay, shop fit-out and general interior upgrade works.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Gallery</div>
+        <h2>Brand & Product Showcase</h2>
+        <p>
+          Later, we will replace these sample images with your real showroom, door, lock,
+          flooring and completed project photos.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80" alt="Showcase 1">
+        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=80" alt="Showcase 2">
+        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1000&q=80" alt="Showcase 3">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="cta">
+        <div class="cta-wrap">
+          <div>
+            <h2>Looking For Doors, Locks, Flooring or Timber Products?</h2>
+            <p>
+              Contact Timber Hub Enterprise to discuss your requirements. This website can also
+              be expanded later with full product catalogue, project gallery and quotation request features.
+            </p>
+          </div>
+          <div>
+            <a class="btn btn-primary" href="https://wa.me/60143794988" target="_blank" style="background:#25D366;">Chat on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Contact Us</div>
+        <h2>Get In Touch</h2>
+        <p>
+          Contact us directly for product enquiries, project discussions and site-related material needs.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-box">
+          <h4>Company</h4>
+          <p>TIMBER HUB ENTERPRISE</p>
+        </div>
+
+        <div class="contact-box">
+          <h4>Address</h4>
+          <p>Bandar Hotspring, Tawau</p>
+        </div>
+
+        <div class="contact-box">
+          <h4>Phone / WhatsApp</h4>
+          <p>014-3794988</p>
+        </div>
+      </div>
+
+      <div class="map-wrap">
+        <iframe
+          src="https://www.google.com/maps?q=Bandar%20Hotspring%20Tawau&output=embed"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div>© 2026 TIMBER HUB ENTERPRISE. All rights reserved.</div>
+      <div>Wooden Doors · Digital Locks · Flooring · Wooden Tables · Timber</div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/60143794988" target="_blank">WhatsApp</a>
 
 </body>
 </html>
