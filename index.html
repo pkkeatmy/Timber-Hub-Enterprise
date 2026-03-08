@@ -5,6 +5,105 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TIMBER HUB ENTERPRISE | Wooden Doors, Digital Locks, Flooring & Timber</title>
   <meta name="description" content="Timber Hub Enterprise in Bandar Hotspring, Tawau. Supplier of wooden doors, digital door locks, flooring, wooden tables and timber materials." />
+  .lock-models{
+    padding: 80px 0;
+    background: #ffffff;
+  }
+  
+  .lock-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 30px;
+  }
+  
+  .lock-card{
+    background: #fff;
+    border-radius: 22px;
+    box-shadow: 0 12px 35px rgba(0,0,0,.08);
+    border: 1px solid #f0e8de;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 24px;
+  }
+  
+  .lock-card img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+  
+  .lock-card h3{
+    margin: 20px 0 10px;
+    color: #2f241d;
+    font-size: 22px;
+  }
+  
+  .lock-card p{
+    margin: 0 20px 18px;
+    color: #6e6e6e;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  
+  .ask-btn{
+    display: inline-block;
+    background: #25D366;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: .2s ease;
+  }
+  
+  .ask-btn:hover{
+    transform: translateY(-2px);
+  }
+  
+  .faq{
+    padding: 80px 0;
+    background: #f7f3ee;
+  }
+  
+  .faq-list{
+    max-width: 1000px;
+    margin: 30px auto 0;
+    display: grid;
+    gap: 18px;
+  }
+  
+  .faq-item{
+    background: #fff;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 12px 35px rgba(0,0,0,.06);
+    border: 1px solid #f0e8de;
+  }
+  
+  .faq-item h4{
+    margin: 0 0 10px;
+    color: #2f241d;
+    font-size: 20px;
+  }
+  
+  .faq-item p{
+    margin: 0;
+    color: #6e6e6e;
+    line-height: 1.7;
+  }
+  
+  @media (max-width: 1024px){
+    .lock-grid{
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 720px){
+    .lock-grid{
+      grid-template-columns: 1fr;
+    }
+  }
   <style>
     :root{
       --primary:#2f241d;
