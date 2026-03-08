@@ -75,24 +75,48 @@
   }
   
   .faq-item{
-    background: #fff;
-    border-radius: 20px;
-    padding: 24px;
-    box-shadow: 0 12px 35px rgba(0,0,0,.06);
-    border: 1px solid #f0e8de;
-  }
-  
-  .faq-item h4{
-    margin: 0 0 10px;
-    color: #2f241d;
-    font-size: 20px;
-  }
-  
-  .faq-item p{
-    margin: 0;
-    color: #6e6e6e;
-    line-height: 1.7;
-  }
+  background:#fff;
+  border-radius:20px;
+  padding:0;
+  box-shadow:0 12px 35px rgba(0,0,0,.06);
+  border:1px solid #f0e8de;
+  overflow:hidden;
+}
+
+.faq-item summary{
+  list-style:none;
+  cursor:pointer;
+  padding:22px 24px;
+  font-weight:700;
+  color:#2f241d;
+  font-size:18px;
+  position:relative;
+}
+
+.faq-item summary::-webkit-details-marker{
+  display:none;
+}
+
+.faq-item summary::after{
+  content:"+";
+  position:absolute;
+  right:24px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:24px;
+  color:#6f4e37;
+}
+
+.faq-item[open] summary::after{
+  content:"−";
+}
+
+.faq-item p{
+  margin:0;
+  padding:0 24px 22px;
+  color:#6e6e6e;
+  line-height:1.7;
+}
   
   @media (max-width: 1024px){
     .lock-grid{
@@ -593,8 +617,68 @@
         font-size:30px;
       }
     }
+    .gallery-img{
+  cursor:pointer;
+  transition:transform .35s ease, box-shadow .35s ease;
+}
+
+.gallery-img:hover{
+  transform:scale(1.03);
+}
+
+.lightbox{
+  display:none;
+  position:fixed;
+  z-index:2000;
+  inset:0;
+  background:rgba(0,0,0,.88);
+  justify-content:center;
+  align-items:center;
+  padding:30px;
+}
+
+.lightbox-content{
+  max-width:90%;
+  max-height:85vh;
+  border-radius:18px;
+  box-shadow:0 20px 60px rgba(0,0,0,.35);
+}
+
+.lightbox-close{
+  position:absolute;
+  top:20px;
+  right:30px;
+  color:#fff;
+  font-size:40px;
+  cursor:pointer;
+  font-weight:700;
+}
   </style>
 </head>
+<script>
+    const galleryImages = document.querySelectorAll('.gallery-img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.querySelector('.lightbox-close');
+  
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+      });
+    });
+  
+    lightboxClose.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+  
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+      }
+    });
+  </script>
 <body>
 
   <div class="topbar">
@@ -853,58 +937,57 @@
       </div>
   
       <div class="gallery-grid">
-        <img src="images/showcase.png" alt="Timber Hub Shop">
-        <img src="images/showcase1.png" alt="Wooden Doors">
-        <img src="images/showcase2.png" alt="Digital Lock">
+        <img src="images/showcase.png" alt="Timber Hub Shop" class="gallery-img">
+        <img src="images/showcase1.png" alt="Wooden Doors" class="gallery-img">
+        <img src="images/showcase2.png" alt="Digital Lock" class="gallery-img">
       </div>
     </div>
   </section>
   
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" alt="Preview">
+  </div>
+  
   <section class="faq" id="faq">
     <div class="container">
-      ...
+      <div class="section-head">
+        <div class="eyebrow">FAQ</div>
+        <h2>Frequently Asked Questions</h2>
+        <p>
+          Here are some common questions customers may ask before visiting our shop
+          or contacting us for products and installation.
+        </p>
+      </div>
+  
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Do you provide installation for digital locks?</summary>
+          <p>Yes, customers can contact us to check installation arrangement and suitability based on the door type.</p>
+        </details>
+  
+        <details class="faq-item">
+          <summary>Do you supply materials for renovation projects?</summary>
+          <p>Yes, Timber Hub supplies products for homes, offices, shops and other renovation or interior upgrade projects.</p>
+        </details>
+  
+        <details class="faq-item">
+          <summary>Can I visit the shop to view samples?</summary>
+          <p>Yes, customers are welcome to visit our shop in Bandar Hotspring, Tawau during business hours.</p>
+        </details>
+  
+        <details class="faq-item">
+          <summary>What are your business hours?</summary>
+          <p>We are open Monday to Saturday, from 9:30 AM to 6:00 PM. Sunday is closed.</p>
+        </details>
+  
+        <details class="faq-item">
+          <summary>How can I ask for price or product details?</summary>
+          <p>You can contact us directly through WhatsApp for faster response on product enquiries, pricing and availability.</p>
+        </details>
+      </div>
     </div>
   </section>
-
-<section class="faq" id="faq">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">FAQ</div>
-      <h2>Frequently Asked Questions</h2>
-      <p>
-        Here are some common questions customers may ask before visiting our shop
-        or contacting us for products and installation.
-      </p>
-    </div>
-
-    <div class="faq-list">
-      <div class="faq-item">
-        <h4>Do you provide installation for digital locks?</h4>
-        <p>Yes, customers can contact us to check installation arrangement and suitability based on the door type.</p>
-      </div>
-
-      <div class="faq-item">
-        <h4>Do you supply materials for renovation projects?</h4>
-        <p>Yes, Timber Hub supplies products for homes, offices, shops and other renovation or interior upgrade projects.</p>
-      </div>
-
-      <div class="faq-item">
-        <h4>Can I visit the shop to view samples?</h4>
-        <p>Yes, customers are welcome to visit our shop in Bandar Hotspring, Tawau during business hours.</p>
-      </div>
-
-      <div class="faq-item">
-        <h4>What are your business hours?</h4>
-        <p>We are open Monday to Saturday, from 9:30 AM to 6:00 PM. Sunday is closed.</p>
-      </div>
-
-      <div class="faq-item">
-        <h4>How can I ask for price or product details?</h4>
-        <p>You can contact us directly through WhatsApp for faster response on product enquiries, pricing and availability.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section id="contact">
     <div class="container">
@@ -955,7 +1038,7 @@
   <footer>
     <div class="container footer-wrap">
       <div>© 2026 TIMBER HUB ENTERPRISE. All rights reserved.</div>
-      <div>Wooden Doors · Digital Locks · Flooring · Wooden Tables · Timber</div>
+      <div>Wooden Doors · Digital Locks · Flooring · Wooden Tables · Timber · Wallpaper · Wooden Plaque</div>
     </div>
   </footer>
 
