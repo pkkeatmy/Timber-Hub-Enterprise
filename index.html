@@ -220,6 +220,21 @@
       color:#3f3f3f;
       font-weight:600;
     }
+      .nav-links a.active{
+  color:var(--primary);
+  position:relative;
+}
+
+.nav-links a.active::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:100%;
+  height:3px;
+  background:var(--accent);
+  border-radius:2px;
+    }
 
     .btn{
       display:inline-block;
@@ -766,12 +781,13 @@
                 <div class="dropdown">
                   <a href="#products">Products</a>
                   <div class="dropdown-menu">
-                    <a href="#products">Wooden Doors</a>
-                    <a href="#products">Digital Locks</a>
-                    <a href="#products">Flooring</a>
-                    <a href="#products">Wooden Tables</a>
-                    <a href="#products">Timber Materials</a>
-                    <a href="#products">Wallpaper</a>
+                    <a href="#wooden-doors">Wooden Doors</a>
+                    <a href="#digital-locks">Digital Locks</a>
+                    <a href="#flooring">Flooring</a>
+                    <a href="#wooden-tables">Wooden Tables</a>
+                    <a href="#timber-materials">Timber Materials</a>
+                    <a href="#wallpaper">Wallpaper</a>
+                    <a href="wooden-plaque">Wooden Plaque</a>
                   </div>
                 </div>
                 <a href="#why-us">Why Us</a>
