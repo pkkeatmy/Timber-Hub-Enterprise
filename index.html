@@ -318,6 +318,9 @@
     section{
       padding:80px 0;
     }
+      section[id]{
+        scroll-margin-top: 140px;
+    }
 
     .section-head{
       text-align:center;
@@ -622,8 +625,15 @@
   transition:transform .35s ease, box-shadow .35s ease;
 }
 
+.gallery-img{
+  cursor:pointer;
+  transition:transform .35s ease, box-shadow .35s ease, filter .35s ease;
+}
+
 .gallery-img:hover{
-  transform:scale(1.03);
+  transform:scale(1.04);
+  box-shadow:0 18px 40px rgba(0,0,0,.18);
+  filter:brightness(1.03);
 }
 
 .lightbox{
@@ -655,30 +665,6 @@
 }
   </style>
 </head>
-<script>
-    const galleryImages = document.querySelectorAll('.gallery-img');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxClose = document.querySelector('.lightbox-close');
-  
-    galleryImages.forEach(img => {
-      img.addEventListener('click', () => {
-        lightbox.style.display = 'flex';
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-      });
-    });
-  
-    lightboxClose.addEventListener('click', () => {
-      lightbox.style.display = 'none';
-    });
-  
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
-        lightbox.style.display = 'none';
-      }
-    });
-  </script>
 <body>
 
   <div class="topbar">
@@ -719,8 +705,7 @@
         </div>
         <h1>Premium Timber & Building Material Supplier in Tawau</h1>
         <p>
-          TIMBER HUB ENTERPRISE specializes in wooden doors, digital door locks, flooring,
-          wooden tables and timber materials for homes, offices, shops and renovation projects.
+            TIMBER HUB ENTERPRISE supplies wooden doors, digital locks, flooring, wallpaper and timber-related materials for homes, offices, retail spaces and renovation projects in Tawau.
         </p>
         <a class="btn btn-primary" href="#products">Explore Products</a>
         <a class="btn btn-outline" href="#contact" style="margin-left:10px;">Contact Now</a>
@@ -1043,6 +1028,30 @@
   </footer>
 
   <a class="whatsapp-float" href="https://wa.me/60143794988" target="_blank">WhatsApp</a>
-
+  
+  <script>
+    const galleryImages = document.querySelectorAll('.gallery-img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.querySelector('.lightbox-close');
+  
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+      });
+    });
+  
+    lightboxClose.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+  
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
