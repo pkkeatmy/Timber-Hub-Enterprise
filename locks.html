@@ -510,6 +510,84 @@
   width:100%;
   display:block;
 }
+.lock-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+  gap:24px;
+  margin-top:30px;
+}
+
+.lock-card{
+  background:#fff;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  border:1px solid #f0e8de;
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+
+.lock-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 45px rgba(0,0,0,.12);
+}
+
+.lock-card .img-wrap{
+  height:320px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff;
+  padding:20px;
+}
+
+.lock-card .img-wrap img{
+  max-height:100%;
+  width:auto;
+  max-width:100%;
+  object-fit:contain;
+}
+
+.lock-card .content{
+  padding:22px;
+}
+
+.lock-card h3{
+  margin:0 0 8px;
+  color:var(--primary);
+  font-size:22px;
+}
+
+.lock-card p{
+  margin:0;
+  color:var(--muted);
+}
+
+.highlight-grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:24px;
+  margin-top:30px;
+}
+
+.highlight-card{
+  background:#fff;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  border:1px solid #f0e8de;
+}
+
+.highlight-card img{
+  width:100%;
+  display:block;
+}
+
+@media (max-width: 720px){
+  .highlight-grid{
+    grid-template-columns:1fr;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -594,69 +672,111 @@
         </p>
       </div>
   
-      <div class="lock-models">
-        <div class="card product-card">
-          <img src="images/V50C PRO.png" alt="V50C PRO">
+      <div class="lock-grid">
+        <div class="lock-card">
+          <div class="img-wrap">
+            <img src="images/V50C PRO.png" alt="V50C PRO">
+          </div>
           <div class="content">
             <h3>V50C PRO</h3>
-            <p>Strong and stylish wooden door options suitable for main entrances and front-facing spaces.</p>
+            <p>Premium smart lock with modern design, suitable for users looking for advanced security and high-end appearance.</p>
           </div>
         </div>
   
-        <div class="card product-card">
-          <img src="images/v7 pro.png" alt="V7 PRO">
+        <div class="lock-card">
+          <div class="img-wrap">
+            <img src="images/v7 pro.png" alt="V7 PRO">
+          </div>
           <div class="content">
             <h3>V7 PRO</h3>
-            <p>Simple and elegant interior wooden doors for bedrooms, study rooms and indoor spaces.</p>
+            <p>Smart lock with premium camera-style design, suitable for modern homes and users who prefer advanced functions.</p>
           </div>
         </div>
-
-        <div class="card product-card">
-          <img src="images/v2.png" alt="V2">
+  
+        <div class="lock-card">
+          <div class="img-wrap">
+            <img src="images/v2.png" alt="V2">
+          </div>
           <div class="content">
             <h3>V2</h3>
-            <p>Modern melamine door options with a clean surface finish, suitable for contemporary homes and interior spaces.</p>
+            <p>Practical and user-friendly lock option for daily home use, combining convenience, safety and modern access control.</p>
           </div>
         </div>
-
-        <div class="card product-card">
-          <img src="images/D100.png" alt="D100">
+  
+        <div class="lock-card">
+          <div class="img-wrap">
+            <img src="images/D100.png" alt="D100">
+          </div>
           <div class="content">
             <h3>D100</h3>
-            <p>Practical plywood door options for residential, shop and renovation use, offering functional and cost-effective choices.</p>
+            <p>Clean and solid smart lock design suitable for homes, offices and customers who prefer a strong minimal style.</p>
           </div>
-        </div>        
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="lock-models">
+  <section id="lock-highlights">
     <div class="container">
       <div class="section-head">
-        <div class="eyebrow">card product-card</div>
+        <div class="eyebrow">Feature Highlights</div>
         <h2>Smart Lock Function Overview</h2>
         <p>
           Browse the key features and smart functions of our selected digital lock models.
         </p>
       </div>
   
-      <div class="lock-models">
-        <div class="lock-highlights">
-          <img src="images/V50C PRO.png" alt="V50C PRO" class="gallery-img">
+      <div class="highlight-grid">
+        <div class="highlight-card">
+          <img src="images/v50cproH.jpg" alt="V50C PRO Highlights">
         </div>
-      
-        <div class="lock-highlights">
-          <img src="images/v7 pro.png" alt="V7 PRO" class="gallery-img">
+  
+        <div class="highlight-card">
+          <img src="images/v7proH.jpg" alt="V7 PRO Highlights">
         </div>
-      
-        <div class="lock-highlights">
-          <img src="images/v2.png" alt="V2" class="gallery-img">
+  
+        <div class="highlight-card">
+          <img src="images/v2H.jpg" alt="V2 Highlights">
         </div>
+  
+        <div class="highlight-card">
+          <img src="images/D100H.jpg" alt="D100 Highlights">
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="lock-highlights">
-          <img src="images/D100.png" alt="D100" class="gallery-img">
+  <section id="lock-suitable">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Suitable For</div>
+        <h2>Who These Digital Locks Are Suitable For</h2>
+        <p>
+          Our smart lock models are suitable for different property types and daily access needs.
+        </p>
+      </div>
+  
+      <div class="products-grid">
+        <div class="card product-card">
+          <div class="content">
+            <h3>Homeowners</h3>
+            <p>For safer and easier daily access without depending on traditional keys.</p>
+          </div>
         </div>
-
+  
+        <div class="card product-card">
+          <div class="content">
+            <h3>Homestay Units</h3>
+            <p>Useful for easier guest access management and a more modern property impression.</p>
+          </div>
+        </div>
+  
+        <div class="card product-card">
+          <div class="content">
+            <h3>Office & Shop Use</h3>
+            <p>Suitable for improving convenience, access control and modern presentation.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
