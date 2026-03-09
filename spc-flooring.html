@@ -194,7 +194,7 @@
     }
 
     section{
-      padding:80px 0;
+      padding:40px 0;
     }
       section[id]{
         scroll-margin-top: 140px;
@@ -244,7 +244,7 @@
     
     .products-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+      grid-template-columns:repeat(3, 1fr);
       gap:24px;
     }
     .door-gallery-grid{
@@ -510,6 +510,88 @@
   color:var(--secondary);
   font-size:14px;
 }
+.colour-scroll{
+  display:grid;
+  grid-template-columns:repeat(5, 1fr);
+  gap:20px;
+}
+
+.colour-card{
+  width:100%;
+}
+.colour-card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  cursor:pointer;
+  transition:transform .25s ease;
+}
+
+.colour-card img:hover{
+  transform:scale(1.03);
+}
+
+@media (max-width: 1200px){
+  .colour-scroll{
+    grid-template-columns:repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 992px){
+  .colour-scroll{
+    grid-template-columns:repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px){
+  .colour-scroll{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px){
+  .colour-scroll{
+    grid-template-columns:1fr;
+  }
+}
+
+.lightbox{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.82);
+  z-index:3000;
+  align-items:center;
+  justify-content:center;
+  padding:30px;
+}
+
+.lightbox.active{
+  display:flex;
+}
+
+.lightbox img{
+  max-width:min(92vw, 1000px);
+  max-height:85vh;
+  border-radius:16px;
+  box-shadow:0 20px 50px rgba(0,0,0,.35);
+}
+
+.lightbox-close{
+  position:absolute;
+  top:18px;
+  right:24px;
+  font-size:40px;
+  line-height:1;
+  color:#fff;
+  cursor:pointer;
+  font-weight:300;
+}
+.section-head h1{
+  margin:0 0 12px;
+  font-size:clamp(32px, 4vw, 52px);
+  color:var(--primary);
+}
 
   </style>
 </head>
@@ -576,39 +658,39 @@
       </p>
     </div>
 
-    <div class="products-grid">
-      <div class="card product-card">
-        <img src="images/B41-Borrelly-Walnut.jpg" alt="B41 Borrelly Walnut">
+    <div class="colour-scroll">
+      <div class="card product-card colour-card">
+        <img src="images/B41-Borrelly-Walnut.jpg" alt="B41 Borrelly Walnut" onclick="openLightbox(this.src, this.alt)">
         <div class="content">
           <h3>B41 Borrelly Walnut</h3>
         </div>
       </div>
 
-      <div class="card product-card">
-        <img src="images/D41-Halleys-Oak.jpg" alt="D41 Halleys Oak">
+      <div class="card product-card colour-card">
+        <img src="images/D41-Halleys-Oak.jpg" alt="D41 Halleys Oak" onclick="openLightbox(this.src, this.alt)">
         <div class="content">
           <h3>D41 Halleys Oak</h3>
         </div>
       </div>
 
-      <div class="card product-card">
-        <img src="images/G41-Donati-Ash.jpg" alt="G41 Donati Ash">
+      <div class="card product-card colour-card">
+        <img src="images/G41-Donati-Ash.jpg" alt="G41 Donati Ash" onclick="openLightbox(this.src, this.alt)">
         <div class="content">
           <h3>G41 Donati Ash</h3>
         </div>
       </div>
 
-            <div class="card product-card">
-        <img src="images/M41-Holmes-Maple.jpg" alt="M41 Holmes Maple">
+      <div class="card product-card colour-card">
+        <img src="images/M41-Holmes-Maple.jpg" alt="M41 Holmes Maple" onclick="openLightbox(this.src, this.alt)">
         <div class="content">
           <h3>M41 Holmes Maple</h3>
         </div>
       </div>
 
-      <div class="card product-card">
-        <img src="images/Y41-Bielas-Oak.jpg" alt="Y41 Bielas Oak">
+      <div class="card product-card colour-card">
+        <img src="images/Y41-Bielas-Oak.jpg" alt="Y41 Bielas Oak" onclick="openLightbox(this.src, this.alt)">
         <div class="content">
-          <h3>G41 Donati Ash</h3>
+          <h3>Y41 Bielas Oak</h3>
         </div>
       </div>
     </div>
@@ -618,43 +700,43 @@
 <section class="series-section">
   <div class="container">
     <div class="series-head">
-      <h2>SkyFlor 5mm engineered SPC (eSPC) Flooring > Wood XL3D</h2>
+      <h2>SkyFlor 5mm engineered SPC (eSPC) Flooring &gt; Wood XL3D</h2>
       <p>
-        SPC flooring is designed to have one layer SPC core; whereas eSPC, through advanced engineering adds vinyl sheets to this layer, resulting in improvements in dimensional stability, enhanced sound absorption and increased underfoot feel comfort.eSPC brings the best of both worlds together by adding the soft touch of Vinyl flooring without compromising the rigid character from SPC flooring.
+        SPC flooring is designed to have one layer SPC core; whereas eSPC, through advanced engineering adds vinyl sheets to this layer, resulting in improvements in dimensional stability, enhanced sound absorption and increased underfoot feel comfort. eSPC brings the best of both worlds together by adding the soft touch of Vinyl flooring without compromising the rigid character from SPC flooring.
       </p>
     </div>
 
-    <div class="products-grid">
-      <div class="card product-card">
-        <img src="images/B51-Cosmos-Walnut.jpg" alt="B51 Cosmos Walnut">
+    <div class="colour-scroll">
+      <div class="card product-card colour-card">
+        <img src="images/B51-Cosmos-Walnut.jpg" alt="B51 Cosmos Walnut" onclick="openLightbox(this.src, this.alt)">
         <div class="content">
           <h3>B51 Cosmos Walnut</h3>
         </div>
       </div>
 
-      <div class="card product-card">
-        <img src="images/D51-Black-Eye-Oak-1.jpg" alt="D51 Black Eye Oak">
+      <div class="card product-card colour-card">
+        <img src="images/D51-Black-Eye-Oak-1.jpg" alt="D51 Black Eye Oak" onclick="openLightbox(this.src, this.alt)">
         <div class="content">
           <h3>D51 Black Eye Oak</h3>
         </div>
       </div>
 
-      <div class="card product-card">
-        <img src="images/G51-Milky-Way-Ash.jpg" alt="G51 Milky Way Ash">
+      <div class="card product-card colour-card">
+        <img src="images/G51-Milky-Way-Ash.jpg" alt="G51 Milky Way Ash" onclick="openLightbox(this.src, this.alt)">
         <div class="content">
           <h3>G51 Milky Way Ash</h3>
         </div>
       </div>
 
-            <div class="card product-card">
-        <img src="images/M51-Cartwheel-Maple.jpg" alt="M51 Cartwheel Maple">
+      <div class="card product-card colour-card">
+        <img src="images/M51-Cartwheel-Maple.jpg" alt="M51 Cartwheel Maple" onclick="openLightbox(this.src, this.alt)">
         <div class="content">
           <h3>M51 Cartwheel Maple</h3>
         </div>
       </div>
 
-      <div class="card product-card">
-        <img src="images/Y51-Andromeda-Oak.jpg" alt="Y51 Andromeda Oak">
+      <div class="card product-card colour-card">
+        <img src="images/Y51-Andromeda-Oak.jpg" alt="Y51 Andromeda Oak" onclick="openLightbox(this.src, this.alt)">
         <div class="content">
           <h3>Y51 Andromeda Oak</h3>
         </div>
@@ -735,6 +817,28 @@
   </footer>
 
   <a class="whatsapp-float" href="https://wa.me/60143794988" target="_blank">WhatsApp</a>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+  function openLightbox(src, alt) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox-img').alt = alt;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(event) {
+    if (event) {
+      event.stopPropagation();
+    }
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+</script>
 
 </body>
 </html>
