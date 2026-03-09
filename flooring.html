@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Digital Door Locks | TIMBER HUB ENTERPRISE Tawau</title>
-  <meta name="description" content="Explore digital door locks available at Timber Hub Enterprise Tawau. Smart security solutions for homes, offices and shops." />
+  <title>Flooring | TIMBER HUB ENTERPRISE Tawau</title>
+  <meta name="description" content="Explore wooden doors by Timber Hub Enterprise in Tawau. Suitable for homes, shops, offices and renovation projects." />
   <STYLE>
       
         :root{
@@ -247,7 +247,40 @@
       grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
       gap:24px;
     }
-  
+    .door-gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:24px;
+      margin-top:30px;
+    }
+
+    .door-gallery-card{
+      background:#fff;
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      border:1px solid #f0e8de;
+    }
+
+    .door-gallery-card img{
+      width:100%;
+      height:320px;
+      object-fit:cover;
+      display:block;
+    }
+
+    @media (max-width: 1024px){
+      .door-gallery-grid{
+        grid-template-columns:repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 720px){
+      .door-gallery-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
     .product-card img{
       height:220px;
       width:100%;
@@ -458,142 +491,6 @@
 .dropdown:hover .dropdown-menu{
   display:block;
 }
-.lock-gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(320px,1fr));
-  gap:28px;
-  margin-top:30px;
-}
-
-.lock-item{
-  background:#fff;
-  border-radius:22px;
-  overflow:hidden;
-  box-shadow:var(--shadow);
-  border:1px solid #f0e8de;
-}
-
-.lock-item img{
-  width:100%;
-  display:block;
-}
-.lock-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
-  gap:24px;
-  margin-top:30px;
-}
-
-.lock-card{
-  background:#fff;
-  border-radius:22px;
-  overflow:hidden;
-  box-shadow:var(--shadow);
-  border:1px solid #f0e8de;
-  transition:transform .3s ease, box-shadow .3s ease;
-}
-
-.lock-card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 20px 45px rgba(0,0,0,.12);
-}
-
-.lock-card .img-wrap{
-  height:320px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#fff;
-  padding:20px;
-}
-
-.lock-card .img-wrap img{
-  max-height:100%;
-  width:auto;
-  max-width:100%;
-  object-fit:contain;
-}
-
-.lock-card .content{
-  padding:22px;
-}
-
-.lock-card h3{
-  margin:0 0 8px;
-  color:var(--primary);
-  font-size:22px;
-}
-
-.lock-card p{
-  margin:0;
-  color:var(--muted);
-}
-
-.highlight-grid{
-  display:grid;
-  grid-template-columns:repeat(2, 1fr);
-  gap:24px;
-  margin-top:30px;
-}
-
-.highlight-card{
-  background:#fff;
-  border-radius:22px;
-  overflow:hidden;
-  box-shadow:var(--shadow);
-  border:1px solid #f0e8de;
-}
-
-.highlight-card img{
-  width:100%;
-  display:block;
-}
-
-@media (max-width: 720px){
-  .highlight-grid{
-    grid-template-columns:1fr;
-  }
-}
-
-.price{
-  font-size:30px;
-  font-weight:900;
-  color:var(--primary);
-  line-height:1;
-  margin:8px 0 8px;
-  letter-spacing:-0.5px;
-}
-
-.price-note{
-  display:inline-block;
-  font-size:12px;
-  color:#7a5a43;
-  background:#f5ede4;
-  padding:6px 12px;
-  border-radius:999px;
-  margin-bottom:14px;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:.5px;
-}
-
-.lock-card .img-wrap{
-  height:280px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#fff;
-  padding:24px;
-  border-bottom:1px solid #f2e9df;
-}
-
-.lock-card .img-wrap img{
-  max-height:100%;
-  max-width:100%;
-  width:auto;
-  object-fit:contain;
-}
-
   </style>
 </head>
 <body>
@@ -642,153 +539,142 @@
     <div class="hero-content">
       <div>
         <div class="hero-badges">
-            <div class="badge">Fingerprint Unlock</div>
-            <div class="badge">PIN Code Access</div>
-            <div class="badge">Smart Security</div>
-            <div class="badge">Modern Design</div>
+            <div class="badge">SPC Flooring</div>
+            <div class="badge">Laminate Flooring</div>
+            <div class="badge">Flooring Accessories</div>
+            <div class="badge">Modern Interior Finish</div>
           </div>
-        <h1>Digital Door Locks</h1>
+        <h1>Flooring Solutions</h1>
         <p>
-          Explore smart digital door lock solutions available at Timber Hub Enterprise Tawau. Improve home security and convenience with modern smart locking systems.          
+            Explore flooring solutions by Timber Hub Enterprise in Tawau, including SPC flooring,
+        laminate flooring and flooring accessories for homes, shops, offices and renovation projects.
         </p>
         <a class="btn btn-primary" href="#contact">Enquire Now</a>
         <a class="btn btn-outline" href="index.html#products" style="margin-left:10px;">Back to Homepage</a>
       </div>
 
       <div class="hero-card">
-          <h3>Digital Lock Highlights</h3>
-            <ul>
-              <li>Fingerprint unlocking technology</li>
-              <li>PIN code and card access</li>
-              <li>Modern design suitable for wooden doors</li>
-              <li>Improved security for homes and offices</li>
-              <li>Easy daily access without traditional keys</li>
-            </ul>
+        <h3>Flooring Highlights</h3>
+        <ul>
+            <li>Suitable for home and commercial spaces</li>
+            <li>Improves interior warmth and overall presentation</li>
+            <li>Modern and practical flooring options</li>
+            <li>Useful for renovation and space upgrading</li>
+            <li>Local enquiry support in Tawau</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <section id="lock-models">
+  <section id="door-categories">
     <div class="container">
       <div class="section-head">
-        <div class="eyebrow">Digital Lock Models</div>
-        <h2>Explore Our Smart Lock Options</h2>
+        <div class="eyebrow">Door Categories</div>
+        <h2>Explore Our Wooden Door Options</h2>
         <p>
-          Explore the main functions and smart security features available in our digital door lock models.
+          Suitable for homes, offices, shops and renovation projects, with practical and presentable designs.
         </p>
       </div>
   
-      <div class="lock-grid">
-        <div class="lock-card">
-          <div class="img-wrap">
-            <img src="images/V50C PRO.png" alt="V50C PRO">
-          </div>
+      <div class="products-grid">
+        <div class="card product-card">
+          <img src="images/doors.jpg" alt="Main Doors">
           <div class="content">
-            <h3>V50C PRO</h3>
-            <div class="price">RM 1,499</div>
-            <div class="price-note">Lock only</div>
-            <p>Premium smart lock with modern design, suitable for users looking for advanced security and high-end appearance.</p>
+            <h3>Main Doors</h3>
+            <p>Strong and stylish wooden door options suitable for main entrances and front-facing spaces.</p>
           </div>
         </div>
-      
-        <div class="lock-card">
-          <div class="img-wrap">
-            <img src="images/v7 pro.png" alt="V7 PRO">
-          </div>
+  
+        <div class="card product-card">
+          <img src="images/doors.jpg" alt="Room Doors">
           <div class="content">
-            <h3>V7 PRO</h3>
-            <div class="price">RM 988</div>
-            <div class="price-note">Lock only</div>
-            <p>Smart lock with premium camera-style design, suitable for modern homes and users who prefer advanced functions.</p>
+            <h3>Room Doors</h3>
+            <p>Simple and elegant interior wooden doors for bedrooms, study rooms and indoor spaces.</p>
           </div>
         </div>
-      
-        <div class="lock-card">
-          <div class="img-wrap">
-            <img src="images/v2.png" alt="V2">
-          </div>
+
+        <div class="card product-card">
+          <img src="images/doors.jpg" alt="Melamine Doors">
           <div class="content">
-            <h3>V2</h3>
-            <div class="price">RM 668</div>
-            <div class="price-note">Lock only</div>
-            <p>Practical and user-friendly lock option for daily home use, combining convenience, safety and modern access control.</p>
+            <h3>Melamine Doors</h3>
+            <p>Modern melamine door options with a clean surface finish, suitable for contemporary homes and interior spaces.</p>
           </div>
         </div>
-      
-        <div class="lock-card">
-          <div class="img-wrap">
-            <img src="images/D100.png" alt="D100">
-          </div>
+
+        <div class="card product-card">
+          <img src="images/plywood-door.png" alt="Plywood Doors">
           <div class="content">
-            <h3>D100</h3>
-            <div class="price">RM 499</div>
-            <div class="price-note">Lock only</div>
-            <p>Clean and solid smart lock design suitable for homes, offices and customers who prefer a strong minimal style.</p>
+            <h3>Plywood Doors</h3>
+            <p>Practical plywood door options for residential, shop and renovation use, offering functional and cost-effective choices.</p>
+          </div>
+        </div>
+  
+        <div class="card product-card">
+          <img src="images/door-frames.png" alt="Door Frames">
+          <div class="content">
+            <h3>Door Frames</h3>
+            <p>Quality wooden frames designed to match door installations for homes and renovation projects.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="lock-highlights">
+  <section id="door-gallery">
     <div class="container">
       <div class="section-head">
-        <div class="eyebrow">Feature Highlights</div>
-        <h2>Smart Lock Function Overview</h2>
+        <div class="eyebrow">Door Gallery</div>
+        <h2>Selected Wooden Door Styles</h2>
         <p>
-          Browse the key features and smart functions of our selected digital lock models.
+          Explore some of our wooden door styles and installation references.
         </p>
       </div>
   
-      <div class="highlight-grid">
-        <div class="highlight-card">
-          <img src="images/v50cproH.jpg" alt="V50C PRO Highlights">
+      <div class="door-gallery-grid">
+        <div class="door-gallery-card">
+          <img src="images/doors.jpg" alt="Wooden Door Style 1" class="gallery-img">
         </div>
-  
-        <div class="highlight-card">
-          <img src="images/v7proH.jpg" alt="V7 PRO Highlights">
+      
+        <div class="door-gallery-card">
+          <img src="images/doors.jpg" alt="Wooden Door Style 2" class="gallery-img">
         </div>
-  
-        <div class="highlight-card">
-          <img src="images/v2H.jpg" alt="V2 Highlights">
-        </div>
-  
-        <div class="highlight-card">
-          <img src="images/D100H.jpg" alt="D100 Highlights">
+      
+        <div class="door-gallery-card">
+          <img src="images/door-frames.png" alt="Door Frame Style" class="gallery-img">
         </div>
       </div>
     </div>
   </section>
 
-  <section id="lock-suitability">
+  <section id="why-flooring">
     <div class="container">
       <div class="section-head">
-        <div class="eyebrow">Installation & Suitability</div>
-        <h2>Suitable For Different Daily Needs</h2>
+        <div class="eyebrow">Why Choose Flooring</div>
+        <h2>Why Customers Consider Our Flooring Solutions</h2>
         <p>
-          Our digital lock models are suitable for various door applications and property types.
+          Flooring is not only about surface finish, but also daily comfort, visual effect and project suitability.
         </p>
       </div>
   
       <div class="products-grid">
         <div class="card product-card">
           <div class="content">
-            <h3>Home & Family Use</h3>
-            <p>Useful for safer and more convenient daily access without depending fully on physical keys.</p>
+            <h3>Modern Appearance</h3>
+            <p>Improves the overall visual style of residential and commercial interior spaces.</p>
           </div>
         </div>
   
         <div class="card product-card">
           <div class="content">
-            <h3>Homestay & Rental Units</h3>
-            <p>Suitable for modern guest access management and creating a more premium impression for the property.</p>
+            <h3>Suitable For Renovation</h3>
+            <p>Useful for interior upgrade, shop fitting, homestay setup and office improvement works.</p>
           </div>
         </div>
   
         <div class="card product-card">
           <div class="content">
-            <h3>Office & Shop Use</h3>
-            <p>Improves convenience, access control and presentation for business premises and workspaces.</p>
+            <h3>Different Product Choices</h3>
+            <p>Customers can explore SPC flooring, laminate flooring and related accessories in one place.</p>
           </div>
         </div>
       </div>
@@ -800,13 +686,13 @@
       <div class="cta">
         <div class="cta-wrap">
           <div>
-            <h2>Looking For A Smart Digital Lock?</h2>
+            <h2>Looking For The Right Flooring Option?</h2>
             <p>
-              Contact Timber Hub Enterprise for digital door lock enquiries, model availability and installation suitability in Tawau.
+              Contact Timber Hub Enterprise for flooring enquiries, project suitability and available options in Tawau.
             </p>
           </div>
           <div>
-            <a class="btn btn-primary" href="https://wa.me/60143794988?text=Hi%2C%20I%20want%20to%20ask%20about%20Digital%20Door%20Locks" target="_blank" style="background:#25D366;">Ask on WhatsApp</a>
+            <a class="btn btn-primary" href="https://wa.me/60143794988?text=Hi%2C%20I%20want%20to%20ask%20about%20Wooden%20Doors" target="_blank" style="background:#25D366;">Ask on WhatsApp</a>
           </div>
         </div>
       </div>
