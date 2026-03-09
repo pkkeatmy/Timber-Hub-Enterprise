@@ -250,13 +250,13 @@
     .door-gallery-grid{
       display:grid;
       grid-template-columns:repeat(3, 1fr);
-      gap:24px;
-      margin-top:30px;
+      gap:16px;
+      margin-top:24px;
     }
 
     .door-gallery-card{
       background:#fff;
-      border-radius:22px;
+      border-radius:18px;
       overflow:hidden;
       box-shadow:var(--shadow);
       border:1px solid #f0e8de;
@@ -264,9 +264,16 @@
 
     .door-gallery-card img{
       width:100%;
-      height:320px;
+      height:220px;
       object-fit:cover;
       display:block;
+      cursor:pointer;
+      transition:transform .35s ease, filter .35s ease;
+    }
+
+    .door-gallery-card:hover img{
+      transform:scale(1.08);
+      filter:brightness(1.04);
     }
 
     @media (max-width: 1024px){
@@ -451,12 +458,6 @@
   transition:transform .35s ease, box-shadow .35s ease, filter .35s ease;
 }
 
-.gallery-img:hover{
-  transform:scale(1.04);
-  box-shadow:0 18px 40px rgba(0,0,0,.18);
-  filter:brightness(1.03);
-}
-
   .dropdown{
   position:relative;
 }
@@ -492,24 +493,11 @@
   display:block;
 }
 
-.category-link{
-  display:block;
-  text-decoration:none;
-  color:inherit;
-}
-
 .category-link:hover{
   transform:translateY(-8px);
   box-shadow:0 20px 45px rgba(0,0,0,.12);
 }
 
-.card-link-text{
-  display:inline-block;
-  margin-top:14px;
-  font-weight:700;
-  color:var(--secondary);
-  font-size:14px;
-}
 .category-link{
   display:block;
   text-decoration:none;
@@ -522,6 +510,27 @@
   font-weight:700;
   color:var(--secondary);
   font-size:14px;
+}
+
+.door-gallery-card{
+  background:#fff;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  border:1px solid #f0e8de;
+}
+
+.door-gallery-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  display:block;
+  transition:transform .35s ease, filter .35s ease;
+}
+
+.door-gallery-card:hover img{
+  transform:scale(1.08);
+  filter:brightness(1.04);
 }
 
   </style>
@@ -639,43 +648,55 @@
   </div>
 </section>
 
-<div class="door-gallery-grid">
-  <div class="door-gallery-card">
-    <img src="images/flooring1.jpg" alt="Flooring Project 1" class="gallery-img">
-  </div>
+<section id="flooring-gallery">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Flooring Gallery</div>
+      <h2>Flooring Design References</h2>
+      <p>
+        Explore selected flooring styles and interior inspirations for homes, shops, offices and renovation projects.
+      </p>
+    </div>
 
-  <div class="door-gallery-card">
-    <img src="images/flooring2.jpg" alt="Flooring Project 2" class="gallery-img">
-  </div>
+    <div class="door-gallery-grid">
+      <div class="door-gallery-card">
+        <img src="images/flooring1.jpg" alt="Flooring Design 1" class="gallery-img">
+      </div>
 
-  <div class="door-gallery-card">
-    <img src="images/flooring3.jpg" alt="Flooring Project 3" class="gallery-img">
-  </div>
+      <div class="door-gallery-card">
+        <img src="images/flooring2.jpg" alt="Flooring Design 2" class="gallery-img">
+      </div>
 
-  <div class="door-gallery-card">
-    <img src="images/flooring4.jpg" alt="Flooring Project 4" class="gallery-img">
-  </div>
+      <div class="door-gallery-card">
+        <img src="images/flooring3.jpg" alt="Flooring Design 3" class="gallery-img">
+      </div>
 
-  <div class="door-gallery-card">
-    <img src="images/flooring5.jpg" alt="Flooring Project 5" class="gallery-img">
-  </div>
+      <div class="door-gallery-card">
+        <img src="images/flooring4.jpg" alt="Flooring Design 4" class="gallery-img">
+      </div>
 
-  <div class="door-gallery-card">
-    <img src="images/flooring6.jpg" alt="Flooring Project 6" class="gallery-img">
-  </div>
+      <div class="door-gallery-card">
+        <img src="images/flooring5.jpg" alt="Flooring Design 5" class="gallery-img">
+      </div>
 
-  <div class="door-gallery-card">
-    <img src="images/flooring7.jpg" alt="Flooring Project 7" class="gallery-img">
-  </div>
+      <div class="door-gallery-card">
+        <img src="images/flooring6.jpg" alt="Flooring Design 6" class="gallery-img">
+      </div>
 
-  <div class="door-gallery-card">
-    <img src="images/flooring8.jpg" alt="Flooring Project 8" class="gallery-img">
-  </div>
+      <div class="door-gallery-card">
+        <img src="images/flooring7.jpg" alt="Flooring Design 7" class="gallery-img">
+      </div>
 
-  <div class="door-gallery-card">
-    <img src="images/flooring9.jpg" alt="Flooring Project 9" class="gallery-img">
+      <div class="door-gallery-card">
+        <img src="images/flooring8.jpg" alt="Flooring Design 8" class="gallery-img">
+      </div>
+
+      <div class="door-gallery-card">
+        <img src="images/flooring9.jpg" alt="Flooring Design 9" class="gallery-img">
+      </div>
+    </div>
   </div>
-</div>
+</section>
 
   <section id="why-flooring">
     <div class="container">
