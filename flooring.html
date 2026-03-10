@@ -492,6 +492,20 @@
 .dropdown:hover .dropdown-menu{
   display:block;
 }
+.dropdown-menu .dropdown{
+  position:relative;
+}
+
+.dropdown-menu .dropdown-menu{
+  top:0;
+  left:100%;
+  margin-left:8px;
+  display:none;
+}
+
+.dropdown-menu .dropdown:hover > .dropdown-menu{
+  display:block;
+}
 
 .category-link:hover{
   transform:translateY(-8px);
@@ -532,7 +546,20 @@
   transform:scale(1.08);
   filter:brightness(1.04);
 }
+.dropdown-menu .dropdown{
+  position:relative;
+}
 
+.dropdown-menu .dropdown-menu{
+  top:0;
+  left:100%;
+  margin-left:8px;
+  display:none;
+}
+
+.dropdown-menu .dropdown:hover > .dropdown-menu{
+  display:block;
+}
   </style>
 </head>
 <body>
@@ -551,26 +578,40 @@
             </div>
 
             <nav class="nav-links">
+
               <a href="index.html#about">About</a>
-            
+
               <div class="dropdown">
                 <a href="index.html#products">Products</a>
+
                 <div class="dropdown-menu">
                   <a href="doors.html">Wooden Doors</a>
                   <a href="locks.html">Digital Locks</a>
-                  <a href="flooring.html">Flooring</a>
-                  <a href="timbers.html">Timbers</a>
-                  <a href="wallpaper.html">Wallpaper</a>
-                  <a href="door-frames.html">Door Frames</a>
-                  <a href="custom-timber.html">Custom Timber Works</a>
-                  <a href="wooden-plaque.html">Wooden Plaque</a>
+
+                  <div class="dropdown">
+                    <a href="flooring.html">Flooring ›</a>
+
+                    <div class="dropdown-menu">
+                      <a href="spc-flooring.html">SPC Flooring</a>
+                      <a href="laminate-flooring.html">Laminate Flooring</a>
+                      <a href="flooring-accessories.html">Flooring Accessories</a>
+                      <a href="wall-ceiling-panel.html">Wall & Ceiling Panel</a>
+                    </div>
+                  </div>
+
+                  <a href="coming-soon.html">Timbers</a>
+                  <a href="coming-soon.html">Wallpaper</a>
+                  <a href="coming-soon.html">Door Frames</a>
+                  <a href="coming-soon.html">Custom Timber Works</a>
+                  <a href="coming-soon.html">Wooden Plaque</a>  
                 </div>
               </div>
-            
+
               <a href="index.html#why-us">Why Us</a>
               <a href="index.html#gallery">Gallery</a>
               <a href="index.html#faq">FAQ</a>
               <a href="index.html#contact">Contact</a>
+
             </nav>
             
       <a class="btn btn-primary" href="https://wa.me/60143794988" target="_blank">WhatsApp Us</a>

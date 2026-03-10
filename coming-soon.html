@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Under Update | TIMBER HUB ENTERPRISE Tawau</title>
+  <meta name="description" content="This page is currently being updated. Contact Timber Hub Enterprise in Tawau for product enquiries and more information." />
+
+  <style>
+    :root{
+      --primary:#2f241d;
+      --secondary:#6f4e37;
+      --accent:#c89b6d;
+      --light:#f7f3ee;
+      --white:#ffffff;
+      --text:#2b2b2b;
+      --muted:#6e6e6e;
+      --line:#e8e0d7;
+      --shadow:0 12px 35px rgba(0,0,0,.08);
+      --radius:22px;
+      --max:1200px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:var(--light);
+      line-height:1.6;
+    }
+
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+
+    .container{
+      width:min(92%, var(--max));
+      margin:auto;
+    }
+
+    .topbar{
+      background:var(--primary);
+      color:#f3e9de;
+      font-size:14px;
+    }
+
+    .topbar .container{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      padding:10px 0;
+      flex-wrap:wrap;
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(255,255,255,.93);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      padding:16px 0;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:24px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .nav-links a{
+      font-size:15px;
+      color:#3f3f3f;
+      font-weight:600;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 22px;
+      border-radius:999px;
+      font-weight:700;
+      transition:.2s ease;
+    }
+
+    .btn-primary{
+      background:var(--primary);
+      color:#fff;
+      box-shadow:var(--shadow);
+    }
+
+    .btn-primary:hover{transform:translateY(-2px)}
+
+    .dropdown{
+      position:relative;
+    }
+
+    .dropdown-menu{
+      position:absolute;
+      top:100%;
+      left:0;
+      min-width:220px;
+      background:#fff;
+      border:1px solid #f0e8de;
+      border-radius:16px;
+      box-shadow:0 18px 40px rgba(0,0,0,.12);
+      padding:10px 0;
+      display:none;
+      z-index:1200;
+    }
+
+    .dropdown-menu a{
+      display:block;
+      padding:12px 18px;
+      color:#2f241d;
+      font-size:14px;
+      font-weight:600;
+      white-space:nowrap;
+    }
+
+    .dropdown-menu a:hover{
+      background:#f9f5ef;
+    }
+
+    .dropdown:hover > .dropdown-menu{
+      display:block;
+    }
+
+    .dropdown-menu .dropdown{
+      position:relative;
+    }
+
+    .dropdown-menu .dropdown-menu{
+      top:0;
+      left:100%;
+      margin-left:8px;
+      display:none;
+    }
+
+    .dropdown-menu .dropdown:hover > .dropdown-menu{
+      display:block;
+    }
+
+    .coming-wrap{
+      min-height:calc(100vh - 180px);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:60px 0;
+    }
+
+    .coming-box{
+      width:min(100%, 760px);
+      background:#fff;
+      border:1px solid #f0e8de;
+      border-radius:30px;
+      box-shadow:var(--shadow);
+      padding:56px 40px;
+      text-align:center;
+    }
+
+    .coming-box .eyebrow{
+      color:var(--secondary);
+      font-weight:800;
+      letter-spacing:2px;
+      font-size:12px;
+      text-transform:uppercase;
+      margin-bottom:12px;
+    }
+
+    .coming-box h1{
+      margin:0 0 14px;
+      font-size:clamp(34px, 5vw, 56px);
+      color:var(--primary);
+      line-height:1.1;
+    }
+
+    .coming-box p{
+      margin:0 auto 14px;
+      max-width:620px;
+      color:var(--muted);
+      font-size:17px;
+    }
+
+    .coming-actions{
+      display:flex;
+      gap:14px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top:28px;
+    }
+
+    .btn-outline{
+      border:1px solid var(--primary);
+      color:var(--primary);
+      background:#fff;
+    }
+
+    footer{
+      background:#201712;
+      color:#d7c7b8;
+      padding:28px 0;
+      margin-top:60px;
+    }
+
+    .footer-wrap{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .whatsapp-float{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      background:#25D366;
+      color:#fff;
+      padding:14px 18px;
+      border-radius:999px;
+      font-weight:800;
+      box-shadow:0 12px 24px rgba(37,211,102,.35);
+      z-index:999;
+    }
+
+    @media (max-width: 1024px){
+      .nav{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .nav-links{
+        gap:14px;
+      }
+    }
+
+    @media (max-width: 720px){
+      .coming-box{
+        padding:40px 24px;
+      }
+
+      .coming-box h1{
+        font-size:36px;
+      }
+
+      .coming-box p{
+        font-size:16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container">
+      <div>Tb 14469, Lot No.C2, Bandar Hotspring, Jalan Air Panas, Tawau, Sabah</div>
+      <div>Call / WhatsApp: 014-3794988</div>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        <img src="images/logo.png" style="height:100px;" alt="Timber Hub Logo">
+      </div>
+
+      <nav class="nav-links">
+        <a href="index.html#about">About</a>
+
+        <div class="dropdown">
+          <a href="index.html#products">Products</a>
+
+          <div class="dropdown-menu">
+            <a href="doors.html">Wooden Doors</a>
+            <a href="locks.html">Digital Locks</a>
+
+            <div class="dropdown">
+              <a href="flooring.html">Flooring ›</a>
+
+              <div class="dropdown-menu">
+                <a href="spc-flooring.html">SPC Flooring</a>
+                <a href="laminate-flooring.html">Laminate Flooring</a>
+                <a href="flooring-accessories.html">Flooring Accessories</a>
+                <a href="wall-ceiling-panel.html">Wall & Ceiling Panel</a>
+              </div>
+            </div>
+
+            <a href="coming-soon.html">Timbers</a>
+            <a href="coming-soon.html">Wallpaper</a>
+            <a href="coming-soon.html">Door Frames</a>
+            <a href="coming-soon.html">Custom Timber Works</a>
+            <a href="coming-soon.html">Wooden Plaque</a>
+          </div>
+        </div>
+
+        <a href="index.html#why-us">Why Us</a>
+        <a href="index.html#gallery">Gallery</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+
+      <a class="btn btn-primary" href="https://wa.me/60143794988" target="_blank">WhatsApp Us</a>
+    </div>
+  </header>
+
+  <main class="coming-wrap">
+    <div class="container">
+      <div class="coming-box">
+        <div class="eyebrow">Website Update In Progress</div>
+        <h1>Page Under Update</h1>
+        <p>
+          This section of our website is currently being upgraded with more product details, colours, specifications and design references.
+        </p>
+        <p>
+          For faster assistance, product enquiries or quotation requests, please contact Timber Hub directly through WhatsApp.
+        </p>
+
+        <div class="coming-actions">
+          <a class="btn btn-primary" href="https://wa.me/60143794988?text=Hi%2C%20I%20want%20to%20ask%20about%20your%20products" target="_blank">Ask on WhatsApp</a>
+          <a class="btn btn-outline" href="index.html">Back to Home</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div>© 2026 TIMBER HUB ENTERPRISE. All rights reserved.</div>
+      <div>Doors · Locks · Flooring · Timbers · Wallpaper · Door Frames · Custom Timber Works · Plaques</div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/60143794988" target="_blank">WhatsApp</a>
+
+</body>
+</html>
