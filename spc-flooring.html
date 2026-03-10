@@ -120,79 +120,6 @@
       background:#fff;
     }
 
-    .hero{
-      position:relative;
-      min-height:86vh;
-      display:flex;
-      align-items:center;
-      color:#fff;
-      background:
-      linear-gradient(rgba(25,18,13,.55), rgba(25,18,13,.55)),
-      url('images/shop.png') center 30% / cover no-repeat;
-
-    }
-
-    .hero-content{
-      width:min(92%, var(--max));
-      margin:auto;
-      padding:80px 0;
-      display:grid;
-      grid-template-columns:1.2fr .8fr;
-      gap:32px;
-      align-items:center;
-    }
-
-    .hero h1{
-      margin:0 0 16px;
-      font-size:clamp(36px, 5vw, 68px);
-      line-height:1.05;
-      font-weight:900;
-      max-width:720px;
-    }
-
-    .hero p{
-      max-width:620px;
-      font-size:18px;
-      color:#f2e9df;
-      margin:0 0 28px;
-    }
-
-    .hero-badges{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-bottom:22px;
-    }
-
-    .badge{
-      background:rgba(255,255,255,.14);
-      border:1px solid rgba(255,255,255,.2);
-      border-radius:999px;
-      padding:10px 14px;
-      font-size:13px;
-      backdrop-filter:blur(4px);
-    }
-
-    .hero-card{
-      background:rgba(255,255,255,.12);
-      border:1px solid rgba(255,255,255,.18);
-      border-radius:24px;
-      padding:24px;
-      backdrop-filter:blur(6px);
-      box-shadow:var(--shadow);
-    }
-
-    .hero-card h3{
-      margin-top:0;
-      font-size:22px;
-    }
-
-    .hero-card ul{
-      margin:0;
-      padding-left:18px;
-      color:#f4ede5;
-    }
-
     section{
       padding:40px 0;
     }
@@ -241,48 +168,12 @@
     box-shadow: 0 20px 45px rgba(0,0,0,.12);
     }
 
-    
-    .products-grid{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:24px;
-    }
-    .door-gallery-grid{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:24px;
-      margin-top:30px;
-    }
-
-    .door-gallery-card{
-      background:#fff;
-      border-radius:22px;
-      overflow:hidden;
-      box-shadow:var(--shadow);
-      border:1px solid #f0e8de;
-    }
-
-    .door-gallery-card img{
-      width:100%;
-      height:320px;
-      object-fit:cover;
-      display:block;
-    }
-
-    @media (max-width: 1024px){
-      .door-gallery-grid{
-        grid-template-columns:repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 720px){
-      .door-gallery-grid{
-        grid-template-columns:1fr;
-      }
+    .series-grid-5 .product-card img{
+      aspect-ratio:1 / 1;
+      height:auto;
     }
 
     .product-card img{
-      height:220px;
       width:100%;
       object-fit:cover;
     }
@@ -415,13 +306,6 @@
         gap:14px;
       }
 
-      .products-grid,
-      .why-grid,
-      .gallery-grid,
-      .about-list{
-        grid-template-columns:1fr;
-      }
-
       .hero{
         min-height:auto;
       }
@@ -446,16 +330,6 @@
         font-size:30px;
       }
     }
-    .gallery-img{
-  cursor:pointer;
-  transition:transform .35s ease, box-shadow .35s ease, filter .35s ease;
-}
-
-.gallery-img:hover{
-  transform:scale(1.04);
-  box-shadow:0 18px 40px rgba(0,0,0,.18);
-  filter:brightness(1.03);
-}
 
   .dropdown{
   position:relative;
@@ -492,65 +366,48 @@
   display:block;
 }
 
-.category-link{
-  display:block;
-  text-decoration:none;
-  color:inherit;
-}
-
-.category-link:hover{
-  transform:translateY(-8px);
-  box-shadow:0 20px 45px rgba(0,0,0,.12);
-}
-
-.card-link-text{
-  display:inline-block;
-  margin-top:14px;
-  font-weight:700;
-  color:var(--secondary);
-  font-size:14px;
-}
-.colour-scroll{
+.series-grid{
   display:grid;
-  grid-template-columns:repeat(5, 1fr);
-  gap:20px;
+  grid-template-columns:repeat(4, 1fr);
+  gap:24px;
 }
 
-.colour-card{
+.series-grid .card{
   width:100%;
 }
-.colour-card img{
+
+.series-grid .product-card img{
   width:100%;
-  height:180px;
+  aspect-ratio:1 / 1;
   object-fit:cover;
   cursor:pointer;
   transition:transform .25s ease;
 }
 
-.colour-card img:hover{
+.series-grid .product-card img:hover{
   transform:scale(1.03);
 }
 
 @media (max-width: 1200px){
-  .colour-scroll{
+  .series-grid{
     grid-template-columns:repeat(4, 1fr);
   }
 }
 
 @media (max-width: 992px){
-  .colour-scroll{
+  .series-grid{
     grid-template-columns:repeat(3, 1fr);
   }
 }
 
 @media (max-width: 768px){
-  .colour-scroll{
+  .series-grid{
     grid-template-columns:repeat(2, 1fr);
   }
 }
 
 @media (max-width: 520px){
-  .colour-scroll{
+  .series-grid{
     grid-template-columns:1fr;
   }
 }
@@ -591,6 +448,52 @@
   margin:0 0 12px;
   font-size:clamp(32px, 4vw, 52px);
   color:var(--primary);
+}
+
+.series-grid-5{
+  display:grid;
+  grid-template-columns:repeat(5, 1fr);
+  gap:24px;
+}
+
+.series-grid-5 .card{
+  width:100%;
+}
+
+.series-grid-5 .product-card img{
+  width:100%;
+  aspect-ratio:1 / 1;
+  object-fit:cover;
+  cursor:pointer;
+  transition:transform .25s ease;
+}
+
+.series-grid-5 .product-card img:hover{
+  transform:scale(1.03);
+}
+
+@media (max-width: 1200px){
+  .series-grid-5{
+    grid-template-columns:repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 992px){
+  .series-grid-5{
+    grid-template-columns:repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px){
+  .series-grid-5{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px){
+  .series-grid-5{
+    grid-template-columns:1fr;
+  }
 }
 
   </style>
@@ -657,37 +560,37 @@
         Livelier flooring design by incorporating new innovations in Hybrid-Surface processes and dimensional upgrade to Five Footer Grande Planks.
       </p>
     </div>
-
-    <div class="colour-scroll">
-      <div class="card product-card colour-card">
+  
+    <div class="series-grid-5">
+      <div class="card product-card">
         <img src="images/B41-Borrelly-Walnut.jpg" alt="B41 Borrelly Walnut" onclick="openLightbox(this.src, this.alt)">
         <div class="content">
           <h3>B41 Borrelly Walnut</h3>
         </div>
       </div>
 
-      <div class="card product-card colour-card">
+      <div class="card product-card">
         <img src="images/D41-Halleys-Oak.jpg" alt="D41 Halleys Oak" onclick="openLightbox(this.src, this.alt)">
         <div class="content">
           <h3>D41 Halleys Oak</h3>
         </div>
       </div>
 
-      <div class="card product-card colour-card">
+      <div class="card product-card">
         <img src="images/G41-Donati-Ash.jpg" alt="G41 Donati Ash" onclick="openLightbox(this.src, this.alt)">
         <div class="content">
           <h3>G41 Donati Ash</h3>
         </div>
       </div>
 
-      <div class="card product-card colour-card">
+      <div class="card product-card">
         <img src="images/M41-Holmes-Maple.jpg" alt="M41 Holmes Maple" onclick="openLightbox(this.src, this.alt)">
         <div class="content">
           <h3>M41 Holmes Maple</h3>
         </div>
       </div>
 
-      <div class="card product-card colour-card">
+      <div class="card product-card">
         <img src="images/Y41-Bielas-Oak.jpg" alt="Y41 Bielas Oak" onclick="openLightbox(this.src, this.alt)">
         <div class="content">
           <h3>Y41 Bielas Oak</h3>
@@ -706,7 +609,7 @@
       </p>
     </div>
 
-    <div class="colour-scroll">
+    <div class="series-grid-5">
       <div class="card product-card colour-card">
         <img src="images/B51-Cosmos-Walnut.jpg" alt="B51 Cosmos Walnut" onclick="openLightbox(this.src, this.alt)">
         <div class="content">
@@ -741,6 +644,261 @@
           <h3>Y51 Andromeda Oak</h3>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="series-section">
+  <div class="container">
+    <div class="series-head">
+      <h2>SkyFlor 6mm engineered SPC (eSPC) Flooring &gt; Wood XL3D</h2>
+      <p>
+        SPC flooring is designed to have one layer SPC core; whereas eSPC, through advanced engineering adds vinyl sheets to this layer, resulting in improvements in dimensional stability, enhanced sound absorption and increased underfoot feel comfort. eSPC brings the best of both worlds together by adding the soft touch of Vinyl flooring without compromising the rigid character from SPC flooring.
+      </p>
+    </div>
+
+    <div class="series-grid-5">
+
+      <div class="card product-card">
+        <img src="images/B61-Oberon-Walnut.jpg" alt="B61 Oberon Walnut" onclick="openLightbox(this.src, this.alt)">
+        <div class="content">
+          <h3>B61 Oberon Walnut</h3>
+        </div>
+      </div>
+
+      <div class="card product-card">
+        <img src="images/D61-Dysnomia-Oak.jpg" alt="D61 Dysnomia Oak" onclick="openLightbox(this.src, this.alt)">
+        <div class="content">
+          <h3>D61 Dysnomia Oak</h3>
+        </div>
+      </div>
+
+      <div class="card product-card">
+        <img src="images/G61-Euporie-Ash.jpg" alt="G61 Euporie Ash" onclick="openLightbox(this.src, this.alt)">
+        <div class="content">
+          <h3>G61 Euporie Ash</h3>
+        </div>
+      </div>
+
+      <div class="card product-card">
+        <img src="images/M61-Miranda-Maple.jpg" alt="M61 Miranda Maple" onclick="openLightbox(this.src, this.alt)">
+        <div class="content">
+          <h3>M61 Miranda Maple</h3>
+        </div>
+      </div>
+
+      <div class="card product-card">
+        <img src="images/Y61-Europa-Oak.jpg" alt="Y61 Europa Oak" onclick="openLightbox(this.src, this.alt)">
+        <div class="content">
+          <h3>Y61 Europa Oak</h3>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="series-section">
+  <div class="container">
+    <div class="series-head">
+      <h2>SkyFlor 5mm engineered SPC (eSPC) Flooring &gt; Stone</h2>
+      <p>
+        SPC flooring is designed to have one layer SPC core; whereas eSPC, through advanced engineering adds vinyl sheets to this layer, resulting in improvements in dimensional stability, enhanced sound absorption and increased underfoot feel comfort. eSPC brings the best of both worlds together by adding the soft touch of Vinyl flooring without compromising the rigid character from SPC flooring.
+      </p>
+    </div>
+
+    <div class="series-grid">
+      <div class="card product-card">
+        <img src="images/SQ11-Murchison.jpg" alt="SQ11 Murchison" onclick="openLightbox(this.src, this.alt)">
+        <div class="content">
+          <h3>SQ11 Murchison</h3>
+        </div>
+      </div>
+
+      <div class="card product-card">
+        <img src="images/SQ21-Yardymly.jpg" alt="SQ21 Yardymly" onclick="openLightbox(this.src, this.alt)">
+        <div class="content">
+          <h3>SQ21 Yardymly</h3>
+        </div>
+      </div>
+
+      <div class="card product-card">
+        <img src="images/SQ31-Tamdakht.jpg" alt="SQ31 Tamdakht" onclick="openLightbox(this.src, this.alt)">
+        <div class="content">
+          <h3>SQ31 Tamdakht</h3>
+        </div>
+      </div>
+
+      <div class="card product-card">
+        <img src="images/SQ41-Allende.jpg" alt="SQ41 Allende" onclick="openLightbox(this.src, this.alt)">
+        <div class="content">
+          <h3>SQ41 Allende</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="series-section">
+  <div class="container">
+    <div class="series-head">
+      <h2>SkyFlor 5mm engineered SPC (eSPC) Flooring &gt; Herringbone</h2>
+      <p>
+        SPC flooring is designed to have one layer SPC core; whereas eSPC, through advanced engineering adds vinyl sheets to this layer, resulting in improvements in dimensional stability, enhanced sound absorption and increased underfoot feel comfort. eSPC brings the best of both worlds together by adding the soft touch of Vinyl flooring without compromising the rigid character from SPC flooring.
+      </p>
+    </div>
+
+    <div class="series-grid">
+      <div class="card product-card">
+        <img src="images/HM11-Cygnus-Maple.jpg" alt="HM11 Cygnus Maple" onclick="openLightbox(this.src, this.alt)">
+        <div class="content">
+          <h3>HM11 Cygnus Maple</h3>
+        </div>
+      </div>
+
+      <div class="card product-card">
+        <img src="images/HY11-Messier-Oak.jpg" alt="HY11 Messier Oak" onclick="openLightbox(this.src, this.alt)">
+        <div class="content">
+          <h3>HY11 Messier Oak</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="series-section">
+  <div class="container">
+    <div class="series-head">
+      <h2>SkyFlor 4mm &amp; 5mm SPC Flooring &gt; Basic</h2>
+      <p>
+        SPC flooring is an evolution of conventional vinyl flooring which achieves excellent results in stability, durability and resistance to temperature changes.
+      </p>
+    </div>
+
+    <div class="series-grid-5">
+
+      <div class="card product-card">
+        <img src="images/BS-Ceres-Walnut.jpg" alt="BS Ceres Walnut" onclick="openLightbox(this.src, this.alt)">
+        <div class="content">
+          <h3>BS Ceres Walnut</h3>
+        </div>
+      </div>
+
+      <div class="card product-card">
+        <img src="images/DS-Orcus-Oak.jpg" alt="DS Orcus Oak" onclick="openLightbox(this.src, this.alt)">
+        <div class="content">
+          <h3>DS Orcus Oak</h3>
+        </div>
+      </div>
+
+      <div class="card product-card">
+        <img src="images/GS-Pluto-Ash.jpg" alt="GS Pluto Ash" onclick="openLightbox(this.src, this.alt)">
+        <div class="content">
+          <h3>GS Pluto Ash</h3>
+        </div>
+      </div>
+
+      <div class="card product-card">
+        <img src="images/MS-Sedna-Maple.jpg" alt="MS Sedna Maple" onclick="openLightbox(this.src, this.alt)">
+        <div class="content">
+          <h3>MS Sedna Maple</h3>
+        </div>
+      </div>
+
+      <div class="card product-card">
+        <img src="images/YS-Eris-Oak.jpg" alt="YS Eris Oak" onclick="openLightbox(this.src, this.alt)">
+        <div class="content">
+          <h3>YS Eris Oak</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="series-section">
+  <div class="container">
+    <div class="series-head">
+      <h2>SkyFlor 2mm Vinyl Flooring &gt; Lite</h2>
+      <p>
+        Vinyl flooring is the cheapest among flooring of other thickness. Installation for 2mm vinyl flooring is normally done using dryback method. This thin layer of flooring is very sensitive towards any imperfection of subfloor. It is suitable to be installed on leveled and smooth concrete subfloor.
+      </p>
+    </div>
+
+    <div class="series-grid">
+
+      <div class="card product-card">
+        <img src="images/B21-Cressida-Walnut.jpg" alt="B21 Cressida Walnut" onclick="openLightbox(this.src, this.alt)">
+        <div class="content">
+          <h3>B21 Cressida Walnut</h3>
+        </div>
+      </div>
+
+      <div class="card product-card">
+        <img src="images/G21-Amaris-Ash.jpg" alt="G21 Amaris Ash" onclick="openLightbox(this.src, this.alt)">
+        <div class="content">
+          <h3>G21 Amaris Ash</h3>
+        </div>
+      </div>
+
+      <div class="card product-card">
+        <img src="images/M21-Artemis-Maple.jpg" alt="M21 Artemis Maple" onclick="openLightbox(this.src, this.alt)">
+        <div class="content">
+          <h3>M21 Artemis Maple</h3>
+        </div>
+      </div>
+
+      <div class="card product-card">
+        <img src="images/Y21-Helena-Oak.jpg" alt="Y21 Helena Oak" onclick="openLightbox(this.src, this.alt)">
+        <div class="content">
+          <h3>Y21 Helena Oak</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="series-section">
+  <div class="container">
+    <div class="series-head">
+      <h2>SkyFlor 6mm real-wood-veneer SPC (vSPC) Engineering Flooring &gt; Wood XXL</h2>
+      <p>
+        SkyFlor’s vSPC engineering flooring combines the authentic beauty of real wood veneer with the water-resistant strength of SPC technology. The real wood surface ensures natural variation and texture, creating a lively and unique flooring appearance.
+      </p>
+      <p>
+        With lifetime surface water warranty and termite warranty, vSPC flooring offers durability and reliability compared with traditional solid wood flooring, making it an excellent choice for modern homes.
+      </p>
+    </div>
+
+    <div class="series-grid">
+
+      <div class="card product-card">
+        <img src="images/B61V-Saturn-Walnut.jpg" alt="B61V Saturn Walnut" onclick="openLightbox(this.src, this.alt)">
+        <div class="content">
+          <h3>B61V Saturn Walnut</h3>
+        </div>
+      </div>
+
+      <div class="card product-card">
+        <img src="images/G61V-Jupiter-Elm.jpg" alt="G61V Jupiter Elm" onclick="openLightbox(this.src, this.alt)">
+        <div class="content">
+          <h3>G61V Jupiter Elm</h3>
+        </div>
+      </div>
+
+      <div class="card product-card">
+        <img src="images/M61V-Mercury-Maple.jpg" alt="M61V Mercury Maple" onclick="openLightbox(this.src, this.alt)">
+        <div class="content">
+          <h3>M61V Mercury Maple</h3>
+        </div>
+      </div>
+
+      <div class="card product-card">
+        <img src="images/Y61V-Venus-Oak.jpg" alt="Y61V Venus Oak" onclick="openLightbox(this.src, this.alt)">
+        <div class="content">
+          <h3>Y61V Venus Oak</h3>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
